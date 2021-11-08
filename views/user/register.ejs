@@ -1,0 +1,37 @@
+<% layout('layouts/boilerplate') %> 
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <img src="https://images.unsplash.com/photo-1487730116645-74489c95b41b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNhbXBncm91bmRzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="" class="card-img-top">
+                <div class="card-body">
+                    <div class="card-title"><h4>Register</h4></div>
+                        <form action="/register" class="validated-form" method="POST" novalidate>
+                            <div class="mb-3">
+                                <label class="form-label" for="username">Username</label>
+                                <input class="form-control" type="text" id="username" name="username" required autofocus>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="email">Email</label>
+                                <input class="form-control" type="email" id="email" name="email" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="password">Password</label>
+                                <input class="form-control" type="password" id="password" name="password" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <button class="btn btn-success btn-block">Register</button>
+                        </form>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
