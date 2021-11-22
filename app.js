@@ -115,6 +115,8 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render('error', { err });
 });
 
-app.listen(3500, () => {
-  console.log('Serving on Port 3500');
+const port = process.env.PORT || 3500;
+
+app.listen(port, () => {
+  console.log(`Serving on port ${port}`);
 });
