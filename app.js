@@ -55,20 +55,25 @@ app.use(
 
 const secret = process.env.SECRET || 'thisshouldbeabettersecret!!';
 
-const store = new MongoDBStore({
+/* const store = new MongoDBStore({
   url:dbUrl,
   databaseName:'yelp-camp',
   secret:secret,
   collection: 'sessions',
   touchAfter: 24*60*60
-});
+}); */
 
 store.on("error",function(e){
   console.log("SESSION STORE ERROR",e)
 })
 
 const sessionConfig = {
-  store: store,
+  store: new MongoDBStore({
+    url:dbUrl,
+    databaseName:'yelp-camp',
+    collection: 'sessions',
+    touchAfter: 24*60*60
+  }),
   secret:secret,
   resave: false,
   saveUinitialized: true,
